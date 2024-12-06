@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        form {
+            text-align: center;
+            border-radius: 8px;
+            background-color: white;
+            width: 340px;
+            padding: 10px 20px;
+            box-shadow: 0px 0px 5px black;
+
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+
+</style>
+</head>
+
+<body>
+
+    <form action="">
+
+        <h1>This is form validation</h1>
+        <br>
+        <label for="">username</label>
+        <input type="text" value="" id="username">
+        <br>
+        <br>
+
+        <label for="">Password</label>
+        <input type="password" value="" id="password">
+        <br>
+        <br>
+
+        <label for="">confirm password</label>
+        <input type="password" value="" id="confirmPassword">
+        <br>
+        <br>
+
+        <button onclick="submitForm()">Submit</button>
+
+    </form>
+
+    <script>
+        const submitForm = () => {
+
+            try {
+                let username = document.getElementById("username").value
+                let password = document.getElementById("password").value
+                let confirmPassword = document.getElementById("confirmPassword").value
+                console.log("Checking the form")
+
+
+                if (!username || !password || !confirmPassword) {
+                    window.alert("Please enter all the input fields.")
+                    return
+                }
+
+                if (password.length < 8) {
+                    window.alert("Password ,ust be atleast 8 characters.")
+                    return
+                }
+
+                if (password !== confirmPassword) {
+                    window.alert("Password Do not match.")
+                    return
+                }
+
+                else {
+                    window.alert("Form submitted successfully.")
+
+                }
+
+
+            } catch (error) {
+                console.log(error)
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
